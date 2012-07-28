@@ -10,10 +10,10 @@ $console = require __DIR__.'/services.php';
 if (file_exists(__DIR__.'/config/config.php')) {
     require __DIR__.'/config/config.php';
 } else {
-    echo "Note: You can provide a custom config file,\n";
-    echo "by creating a config/config.php file.\n";
+    echo 'Note: You can provide a custom config file'.PHP_EOL;
+    echo 'by creating a config/config.php file.'.PHP_EOL;
 }
 
-$console = require __DIR__.'/src/console.php';
+$console = require __DIR__.'/console.php';
 
 $console->run();
