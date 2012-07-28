@@ -11,13 +11,13 @@
             "email" : "lyrixx@lyrixx.info"
         }
     ],
-    "minimum-stability":    "dev",
+    "minimum-stability": "dev",
     "require": {
         "php"                         : ">=5.3.3",
         "pimple/pimple"               : "1.0.*",
         "symfony/console"             : "2.1.*",
         "symfony/yaml"                : "2.1.*",
-        "marcw/buzz-service-provider" : "*"
+        "kriswallsmith/buzz"          : ">=0.6"
     },
     "autoload": {
         "psr-0": { "Series": "." }

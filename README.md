@@ -1,6 +1,8 @@
 Series
 ======
 
+[![Build Status](https://secure.travis-ci.org/lyrixx/Series.png?branch=master)](http://travis-ci.org/lyrixx/Series)
+
 Series is a software able to download automatically your favorite TV shows.
 
 Basically, Series will lookup into different sources (e.g. a rss feed)
@@ -29,3 +31,10 @@ Then, if you have a good torrent downloader, you have to configure it to make
 it scan the folder :
 
 - For transmission : http://www.makeuseof.com/tag/how-to-automate-organize-torrents-with-the-transmission-downloader-mac/
+
+Usage
+-----
+
+just run :
+
+    ./console download
