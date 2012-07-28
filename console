@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+$app = new \Pimple();
+
+$console = require __DIR__.'/services.php';
+
+if (file_exists(__DIR__.'/config/config.php')) {
+    require __DIR__.'/config/config.php';
+} else {
+    echo "Note: You can provide a custom config file,\n";
+    echo "by creating a config/config.php file.\n";
+}
+
+$console = require __DIR__.'/src/console.php';
+
+$console->run();

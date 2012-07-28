@@ -1,0 +1,4 @@
+shows:
+    - { title: dexter, season: 01, episode: 00 }
+    - { title: breaking bad, season: 01, episode: 00 }
+    - { title: weeds, season: 01, episode: 00 }

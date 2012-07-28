@@ -1,0 +1,25 @@
+{
+    "name"        : "lyrixx/series",
+    "type"        : "application",
+    "description" : "Download your tv shows",
+    "keywords"    : ["tv show", "download"],
+    "homepage"    : "http://lyrixx.github.com/Series/",
+    "license"     : "MIT",
+    "authors"     : [
+        {
+            "name"  : "Grégoire Pineau",
+            "email" : "lyrixx@lyrixx.info"
+        }
+    ],
+    "minimum-stability":    "dev",
+    "require": {
+        "php"                         : ">=5.3.3",
+        "pimple/pimple"               : "1.0.*",
+        "symfony/console"             : "2.1.*",
+        "symfony/yaml"                : "2.1.*",
+        "marcw/buzz-service-provider" : "*"
+    },
+    "autoload": {
+        "psr-0": { "Series": "." }
+    }
+}

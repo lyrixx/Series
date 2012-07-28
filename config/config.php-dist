@@ -1,0 +1,27 @@
+<?php
+
+$app['series.extension.downloader.torrent_inotify.path'] = '/var/www/download/torrent/';
+
+$app['series.provider.mine'] = function($app) {
+    return array(
+        $app['series.extension.provider.mine.yaml'],
+    );
+};
+
+$app['series.provider.upstream'] = function($app) {
+    return array(
+        $app['series.extension.provider.upsteam.daily_tv_torrent'],
+    );
+};
+
+$app['series.downloader'] = function($app) {
+    return array(
+        $app['series.extension.downloader.torrent_inotify'],
+    );
+};
+
+$app['series.show.status'] = function($app) {
+    return array(
+        $app['series.extension.show.status.filesystem'],
+    );
+};
