@@ -32,7 +32,7 @@ class DownloadRegistry implements DownloadInterface
 
     public function getSupportedType()
     {
-        throw new \RuntimeException('You can not call getSupportedType DownloadRegistry class');
+        return true;
     }
 
     public function addDownloader(DownloadInterface $downloaders)
