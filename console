@@ -26,18 +26,21 @@ $console
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
         $series = $app['series.serie'];
 
+        $output->writeln(sprintf('[%s] Hello', date('Y-m-d h:i:s')));
+
         $showsDownloadable = $series->getDownloadableShowCollection();
 
         if (!count($showsDownloadable->getCollection())) {
-            return $output->write('<info>No new show to download</info>', true);
+            $output->writeln('<info>No new show to download</info>');
+        } else {
+
+            $output->writeln('<info>The following show will be downloaded:</info>');
+            $output->writeln($showsDownloadable->getCollection());
+
+            $series->download($showsDownloadable, $app['series.download_all']);
         }
 
-        $output->write('<info>The following show will be downloaded:</info>', true);
-        $output->writeln($showsDownloadable->getCollection());
-
-        $series->download($showsDownloadable, $app['series.download_all']);
-
-        return $output->write('<info>Bye bye</info>', true);
+        return $output->writeln('Bye bye');
 
     })
 ;
