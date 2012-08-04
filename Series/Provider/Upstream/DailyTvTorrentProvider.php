@@ -6,13 +6,12 @@ use Series\Show\Upstream\ShowCollection;
 
 class DailyTvTorrentProvider extends FeedProviderAbstract
 {
+    CONST FEED_NO_PREFER  = 'http://www.dailytvtorrents.org/rss/allshows';
     CONST FEED_PREFER_720 = 'http://www.dailytvtorrents.org/rss/allshows?prefer=720';
 
-    public function __construct($browser, $showClass = null, ShowCollection $showCollection = null, GuessInfo $guessInfo = null)
+    public function __construct($browser, $feed = self::FEED_NO_PREFER, $showClass = 'Series\Show\Upstream\ShowTorrent', ShowCollection $showCollection = null, GuessInfo $guessInfo = null)
     {
-        $showClass = $showClass ?: 'Series\Show\Upstream\ShowTorrent';
-
-        parent::__construct(self::FEED_PREFER_720, $browser, $showClass, $showCollection, $guessInfo);
+        parent::__construct($feed, $browser, $showClass, $showCollection, $guessInfo);
     }
 
     public function fetch()

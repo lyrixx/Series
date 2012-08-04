@@ -22,7 +22,8 @@ class Torrenthound720TorrentProviderTest extends \PHPUnit_Framework_TestCase
         ;
 
         $showCollection = new ShowCollection();
-        $provider = new Torrenthound720TorrentProvider($browser, '\\Series\\Show\\Upstream\\ShowTorrent', $showCollection);
+        $provider = new Torrenthound720TorrentProvider($browser);
+        $provider->setShowCollection($showCollection);
         $provider->fetch();
 
         $this->assertCount(0, $showCollection->getShows());

@@ -22,7 +22,8 @@ class DailyTvTorrentProviderTest extends \PHPUnit_Framework_TestCase
         ;
 
         $showCollection = new ShowCollection();
-        $provider = new DailyTvTorrentProvider($browser, '\\Series\\Show\\Upstream\\ShowTorrent', $showCollection);
+        $provider = new DailyTvTorrentProvider($browser);
+        $provider->setShowCollection($showCollection);
         $provider->fetch();
 
         $this->assertCount(100, $showCollection->getShows());
