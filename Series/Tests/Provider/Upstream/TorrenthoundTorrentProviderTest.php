@@ -2,16 +2,16 @@
 
 namespace Series\Tests\Provider\Upstream;
 
-use Series\Provider\Upstream\DailyTvTorrentProvider;
+use Series\Provider\Upstream\TorrenthoundTorrentProvider;
 use Series\Show\Upstream\ShowCollection;
 
-class DailyTvTorrentProviderTest extends \PHPUnit_Framework_TestCase
+class TorrenthoundTorrentProviderTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testFetch()
     {
         $response = new \Buzz\Message\Response();
-        $response->setContent(file_get_contents(__DIR__.'/Fixtures/DailyTvTorrent.xml'));
+        $response->setContent(file_get_contents(__DIR__.'/Fixtures/Torrenthound.xml'));
         $response->setHeaders(array('HTTP/1.1 200 OK'));
 
         $browser = $this->getMock('Buzz\Browser');
@@ -22,11 +22,11 @@ class DailyTvTorrentProviderTest extends \PHPUnit_Framework_TestCase
         ;
 
         $showCollection = new ShowCollection();
-        $provider = new DailyTvTorrentProvider($browser);
+        $provider = new TorrenthoundTorrentProvider($browser);
         $provider->setShowCollection($showCollection);
         $provider->fetch();
 
-        $this->assertCount(100, $showCollection->getShows());
+        $this->assertCount(6, $showCollection->getShows());
     }
 
 }

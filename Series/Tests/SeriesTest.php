@@ -29,14 +29,14 @@ class SeriesTests extends \PHPUnit_Framework_TestCase
             ->expects($this->exactly($i))
             ->method('download')
         ;
-        $series->getDownloader()->addDownloader($downloadFake);
+        $series->setDownloader($downloadFake);
 
         $statusFake = $this->getMock('Series\Show\Status\StatusInterface');
         $statusFake
             ->expects($this->exactly($i))
             ->method('setMarkAsDownloaded')
         ;
-        $series->getShowStatus()->addStatus($statusFake);
+        $series->setShowStatus($statusFake);
 
         $show1 = new MineShow('foo', 1.0);
         $matchedShow1 = new MatchedShow($show1);

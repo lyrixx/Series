@@ -1,17 +1,11 @@
 {
-    "hash": "0d3b45279862bc6cc5157480131c4764",
+    "hash": "3d0fb08ebc24c8b13e326bc0b9c097a8",
     "packages": [
         {
             "package": "kriswallsmith/buzz",
             "version": "dev-master",
             "source-reference": "2ba5da13b1b03590f0164b3fb61578078d671fcc",
             "commit-date": "1341070218"
-        },
-        {
-            "package": "marcw/buzz-service-provider",
-            "version": "dev-master",
-            "source-reference": "f698ac0259d55a0209b344ac9978f0d6107d920f",
-            "commit-date": "1340705421"
         },
         {
             "package": "pimple/pimple",

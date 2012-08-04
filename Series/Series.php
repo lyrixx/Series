@@ -70,6 +70,9 @@ class Series
     {
         foreach ($showCollection->getCollection() as $show) {
             foreach ($show->getMatched() as $upstreamShow) {
+                if ($upstreamShow->getType() !=$this->downloader->getSupportedType()) {
+                    throw new \RunTimeException(sprintf('There is no downloaders for "%s" type', $upstreamShow->getType()));
+                }
                 $this->downloader->download($upstreamShow);
                 $this->showStatus->setMarkAsDownloaded($show->getMineShow());
                 if (!$downloadAll) {

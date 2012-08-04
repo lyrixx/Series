@@ -1,4 +1,4 @@
 shows:
-    - { title: dexter, season: 01, episode: 00 }
-    - { title: breaking bad, season: 01, episode: 00 }
-    - { title: weeds, season: 01, episode: 00 }
+    - { title: dexter }
+    - { title: breaking bad }
+    - { title: weeds, season: 05, episode: 02 }

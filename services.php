@@ -3,6 +3,8 @@
 use Series\Series;
 use Series\Downloader\TorrentInotify;
 use Series\Provider\Upstream\DailyTvTorrentProvider;
+use Series\Provider\Upstream\TorrenthoundTorrentProvider;
+use Series\Provider\Upstream\Torrenthound720TorrentProvider;
 use Series\Provider\Mine\Yaml;
 use Series\Show\Status\Filesystem;
 
@@ -73,6 +75,12 @@ $app['series.extension.provider.mine.yaml']      = function ($app) {
 
 $app['series.extension.provider.upsteam.daily_tv_torrent'] = function() {
     return new DailyTvTorrentProvider(new Buzz\Browser());
+};
+$app['series.extension.provider.upsteam.torrent_hound'] = function() {
+    return new TorrenthoundTorrentProvider(new Buzz\Browser());
+};
+$app['series.extension.provider.upsteam.torrent_hound_720'] = function() {
+    return new Torrenthound720TorrentProvider(new Buzz\Browser());
 };
 
 $app['series.extension.downloader.torrent_inotify.path'] = __DIR__.'/cache/torrent/';
