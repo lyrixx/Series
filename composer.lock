@@ -99,18 +99,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "57d03f87db82eee2d63c2a6a7f767c2e376f6d35"
+                "reference": "9df10ae1192d5242c0085c35b15a394424b73def"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/zipball/57d03f87db82eee2d63c2a6a7f767c2e376f6d35",
-                "reference": "57d03f87db82eee2d63c2a6a7f767c2e376f6d35",
+                "url": "https://github.com/symfony/Console/zipball/9df10ae1192d5242c0085c35b15a394424b73def",
+                "reference": "9df10ae1192d5242c0085c35b15a394424b73def",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1348488710",
+            "time": "1349173376",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -187,9 +187,7 @@
             "homepage": "http://symfony.com"
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
