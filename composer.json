@@ -11,7 +11,6 @@
             "email" : "lyrixx@lyrixx.info"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php"                         : ">=5.3.3",
         "pimple/pimple"               : "1.0.*",
