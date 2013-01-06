@@ -1,0 +1,15 @@
+site:
+    title:        Series
+    description:  Download your tv show like a sir
+    author_name:  Grégoire Pineau
+    author_email: lyrixx@lyrixx.info
+    author_url:   http://gregoirepineau.fr
+    gh_url:       https://github.com/lyrixx/Series
+
+engine:
+    themes:
+        - %dir%/vendor/lyrixx/my-theme-bootstrap
+        - %dir%/vendor/carew/theme-bootstrap
+    extensions:
+        - Carew\Plugin\Toc\TocExtension
+        - Carew\Plugin\Highlight\HighlightExtension

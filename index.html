@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Series</title>
+
+    <meta name="description" content="Download your tv show like a sir">
+    <meta name="author" content="Grégoire Pineau">
+    <meta name="viewport" content="width=device-width">
+
+    
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    
+    <script src="./js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+          <a href="https://github.com/lyrixx/Series" target="_blank"><img style="position: fixed; top: 40px; left: 0; border: 0; z-index:10000" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  
+          <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+              <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href=".">Series</a>
+                  <div class="nav-collapse collapse">
+                        <ul class="nav">
+                              <ul class="nav">
+                                              </ul>
+                    
+         <li class="divider-vertical"></li>
+                                    <li><a href="#installation">Installation</a></li>
+                            <li><a href="#usage">Usage</a></li>
+                        </ul>
+                      <ul class="nav pull-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Other OSS project">
+        Lyrixx
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+                          <li><a href="http://carew.github.com" target="_blank">Carew</a></li>
+                  <li><a href="http://lyrixx.github.com/Silex-Kitchen-Edition/" target="_blank">Silex Kitchen Edition</a></li>
+                  <li><a href="http://lyrixx.github.com/lifestream" target="_blank">Lifestream</a></li>
+                  <li><a href="http://lyrixx.github.com/Series" target="_blank">Series</a></li>
+                <li class="divider"></li>
+        <li class="nav-header">Follow me on</li>
+                          <li><a href="http://github.com/lyrixx" target="_blank">Github</a></li>
+                  <li><a href="http://twitter.com/lyrixx" target="_blank">Twitter</a></li>
+                  <li><a href="http://blog.lyrixx.info" target="_blank">Blog</a></li>
+              </ul>
+    </li>
+  </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+    
+          <div class="container">
+
+        
+                  <div class="row">
+            <div class="span10 offset1 content">
+                                                <div class="page-header">
+                    <h1>Series <small>Download your tv show like a sir</small></h1>
+                  </div>
+                              
+              <p>Series is a software able to download automatically your favorite TV shows.</p>
+
+<p>Basically, Series will lookup into different sources (e.g. a rss feed)
+and will compare these feeds with shows you want to download.</p>
+
+<h2 id="installation">Installation<a href="#installation" class="anchor">#</a></h2>
+
+<p>install composer then run :</p>
+
+<pre class="php" style="font-family:monospace;">composer<span style="color: #339933;">.</span>phar create<span style="color: #339933;">-</span>project lyrixx<span style="color: #339933;">/</span>series</pre>
+
+<p>Then you have to setup some configurations. If you want, you can use the
+default configuration :</p>
+
+<pre><code>cp config/config.php-dist config/config.php
+cp config/show.yml-dist config/show.yml
+</code></pre>
+
+<p>With the default configuration, Series will try to download tv show listed
+in <code>config/show.yml</code> from the rss feed of <code>http://www.dailytvtorrents.org</code>.
+If it find something, it will copy the <code>.torrent</code> to a local folder. You can
+customize the location thanks to <code>config/config.php</code>. Just replace the value
+of <code>$app['series.extension.downloader.torrent_inotify.path']</code>.</p>
+
+<p>Then, if you have a good torrent downloader, you have to configure it to make
+it scan the folder :</p>
+
+<ul><li>For transmission : http://www.makeuseof.com/tag/how-to-automate-organize-torrents-with-the-transmission-downloader-mac/</li>
+</ul><h2 id="usage">Usage<a href="#usage" class="anchor">#</a></h2>
+
+<p>just run :</p>
+
+<pre><code>./console download
+</code></pre>            </div>
+          </div>
+        
+                  <footer>
+            <p>
+              &copy;
+                              <a href="http://gregoirepineau.fr">
+                  Grégoire Pineau
+                </a>
+                            2013
+              <small>
+                with help from <a href="http://carew.github.com/" target="_blank">Carew</a>
+              </small>
+            </p>
+          </footer>
+              </div>
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+    <script src="./js/vendor/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+      </body>
+</html>
