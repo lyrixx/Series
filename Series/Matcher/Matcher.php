@@ -17,7 +17,7 @@ class Matcher
     private $showStatus;
     private $guessInfo;
 
-    private $matchedShowCollections;
+    private $matchedShowCollection;
 
     public function __construct(
         MineShowCollection $mineShowCollection = null,

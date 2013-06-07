@@ -15,7 +15,6 @@ use Series\Show\Mine\ShowCollection as MineShowCollection;
 use Series\Show\Status\StatusRegistry;
 use Series\Show\Status\StatusInterface;
 use Series\Show\Upstream\ShowCollection as UpstreamShowCollection;
-use Series\Show\Upstream\ShowInterface as UpstreamShow;
 use Series\Matcher\Matcher;
 use Series\Matcher\MatchedShowCollection;
 
