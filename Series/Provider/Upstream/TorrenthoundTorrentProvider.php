@@ -4,6 +4,7 @@ namespace Series\Provider\Upstream;
 
 use Series\Show\Upstream\ShowCollection;
 use Series\Show\Upstream\ShowInterface;
+use Series\Utils\GuessInfo;
 
 class TorrenthoundTorrentProvider extends FeedProviderAbstract
 {
