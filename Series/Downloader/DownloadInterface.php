@@ -8,5 +8,5 @@ interface DownloadInterface
 {
     public function download(ShowInterface $show);
 
-    public function getSupportedType();
+    public function supports($type);
 }

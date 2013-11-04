@@ -1,3 +1,6 @@
-/vendor/
 /cache/
 /config/
+/doc/vendor/
+/doc/web/
+/vendor/
+/doc/

@@ -6,7 +6,7 @@ use Series\Show\Mine\ShowInterface;
 
 interface StatusInterface
 {
-    public function isAlreadyDownloaded(ShowInterface $show);
+    public function isDownloaded(ShowInterface $show);
 
-    public function setMarkAsDownloaded(ShowInterface $show);
+    public function markAsDownloaded(ShowInterface $show);
 }

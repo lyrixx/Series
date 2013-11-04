@@ -16,8 +16,8 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 
         $statusFilesystem = new Filesystem($showCollectionPath);
 
-        $this->assertFalse($statusFilesystem->isAlreadyDownloaded($show1));
-        $this->assertFalse($statusFilesystem->isAlreadyDownloaded($show2));
+        $this->assertFalse($statusFilesystem->isDownloaded($show1));
+        $this->assertFalse($statusFilesystem->isDownloaded($show2));
 
         unlink($showCollectionPath);
     }
@@ -34,8 +34,8 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 
         $statusFilesystem = new Filesystem($showCollectionPath);
 
-        $this->assertTrue($statusFilesystem->isAlreadyDownloaded($show1));
-        $this->assertTrue($statusFilesystem->isAlreadyDownloaded($show2));
+        $this->assertTrue($statusFilesystem->isDownloaded($show1));
+        $this->assertTrue($statusFilesystem->isDownloaded($show2));
 
         unlink($showCollectionPath);
     }

@@ -11,32 +11,37 @@ use Series\Matcher\MatchedShow;
 
 class SeriesTests extends \PHPUnit_Framework_TestCase
 {
+    public function getDownloadTest()
+    {
+        return array(
+            array(1, false),
+            array(4, true),
+        );
+    }
 
     /**
      * @dataProvider getDownloadTest
      */
     public function testDownload($i, $downloadAll)
     {
-        $series = new Series();
-
-        $downloadFake = $this->getMock('Series\Downloader\DownloadInterface');
-        $downloadFake
+        $downloader = $this->getMock('Series\Downloader\DownloadInterface');
+        $downloader
             ->expects($this->exactly($i))
-            ->method('getSupportedType')
-            ->will($this->returnValue('FAKE'))
+            ->method('supports')
+            ->will($this->returnValue(true))
         ;
-        $downloadFake
+        $downloader
             ->expects($this->exactly($i))
             ->method('download')
         ;
-        $series->setDownloader($downloadFake);
 
-        $statusFake = $this->getMock('Series\Show\Status\StatusInterface');
-        $statusFake
+        $status = $this->getMock('Series\Show\Status\StatusInterface');
+        $status
             ->expects($this->exactly($i))
-            ->method('setMarkAsDownloaded')
+            ->method('markAsDownloaded')
         ;
-        $series->setShowStatus($statusFake);
+
+        $series = new Series(null, null, $downloader, $status);
 
         $show1 = new MineShow('foo', 1.0);
         $matchedShow1 = new MatchedShow($show1);
@@ -52,12 +57,9 @@ class SeriesTests extends \PHPUnit_Framework_TestCase
         $series->download($showCollection, $downloadAll);
     }
 
-    public function getDownloadTest()
+    public function testCreateWithConfig()
     {
-        return array(
-            array(1, false),
-            array(4, true),
-        );
+        $series = Series::createWithConfig();
     }
 }
 

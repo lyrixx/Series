@@ -7,9 +7,9 @@ use Series\Show\Upstream\ShowInterface as UpstreamShow;
 
 class MatchedShow
 {
-
     private $mineShow;
-    private $matched; // Upstream
+    // Upstream show
+    private $matched;
 
     public function __construct(MineShow $mineShow)
     {

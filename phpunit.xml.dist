@@ -16,4 +16,9 @@
             <directory>./Series/Tests</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./Series</directory>
+        </whitelist>
+    </filter>
 </phpunit>

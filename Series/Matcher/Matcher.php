@@ -40,7 +40,7 @@ class Matcher
                 if ($this->isDownloadable($mineShow, $upstreamShow)) {
                     $mineShowTmp = clone $mineShow;
                     $mineShowTmp->setVersion($upstreamShow->getVersion());
-                    if ($byPassShowStatus || !$this->showStatus->isAlreadyDownloaded($mineShowTmp)) {
+                    if ($byPassShowStatus || !$this->showStatus->isDownloaded($mineShowTmp)) {
                         if (!$this->matchedShowCollection->contains($mineShowTmp)) {
                             $this->matchedShowCollection->add(new MatchedShow($mineShowTmp));
                         }

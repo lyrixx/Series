@@ -21,12 +21,12 @@ class Filesystem implements StatusInterface
         $this->showCollection     = file($showCollectionPath, FILE_IGNORE_NEW_LINES);
     }
 
-    public function isAlreadyDownloaded(ShowInterface $show)
+    public function isDownloaded(ShowInterface $show)
     {
         return in_array($show->__toString(), $this->showCollection);
     }
 
-    public function setMarkAsDownloaded(ShowInterface $show)
+    public function markAsDownloaded(ShowInterface $show)
     {
         file_put_contents($this->showCollectionPath, $show->__toString().PHP_EOL, FILE_APPEND);
     }

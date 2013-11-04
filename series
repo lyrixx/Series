@@ -3,17 +3,9 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$app = new \Pimple();
 
-require __DIR__.'/services.php';
 
-if (file_exists(__DIR__.'/config/config.php')) {
-    require __DIR__.'/config/config.php';
-} else {
-    echo 'Note: You can provide a custom config file'.PHP_EOL;
-    echo 'by creating a config/config.php file.'.PHP_EOL;
-}
-
+use Series\Series;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -23,25 +15,19 @@ $console = new Application('My TV-Show Downloader', '0.1');
 $console
     ->register('download')
     ->setDescription('Download latest episodes')
-    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-        $series = $app['series.serie'];
-
-        $output->writeln(sprintf('[%s] Hello', date('Y-m-d h:i:s')));
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+        $series = Series::createWithConfig(file_exists(__DIR__.'/../config/config.php' ? __DIR__.'/../config/config.php' : null));
 
         $showsDownloadable = $series->getDownloadableShowCollection();
 
         if (!count($showsDownloadable->getCollection())) {
             $output->writeln('<info>No new show to download</info>');
         } else {
-
             $output->writeln('<info>The following show will be downloaded:</info>');
             $output->writeln($showsDownloadable->getCollection());
 
-            $series->download($showsDownloadable, $app['series.download_all']);
+            $series->download($showsDownloadable);
         }
-
-        return $output->writeln('Bye bye');
-
     })
 ;
 

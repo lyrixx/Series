@@ -7,22 +7,27 @@ use Series\Show\Mine\ShowInterface;
 class StatusRegistry implements StatusInterface
 {
 
-    private $status;
+    private $statuses;
 
-    public function __construct(array $status = array())
+    public function __construct(array $statuses = array())
     {
-        $this->status = $status;
+        $this->statuses = $statuses;
     }
 
     public function addStatus(StatusInterface $status)
     {
-        $this->status[] = $status;
+        $this->statuses[] = $status;
     }
 
-    public function isAlreadyDownloaded(ShowInterface $show)
+    public function setStatuses(array $statuses = array())
     {
-        foreach ($this->status as $status) {
-            if ($status->isAlreadyDownloaded($show)) {
+        $this->statuses = $statuses;
+    }
+
+    public function isDownloaded(ShowInterface $show)
+    {
+        foreach ($this->statuses as $status) {
+            if ($status->isDownloaded($show)) {
                 return true;
             }
         }
@@ -30,10 +35,10 @@ class StatusRegistry implements StatusInterface
         return false;
     }
 
-    public function setMarkAsDownloaded(ShowInterface $show)
+    public function markAsDownloaded(ShowInterface $show)
     {
-        foreach ($this->status as $status) {
-            $status->setMarkAsDownloaded($show);
+        foreach ($this->statuses as $status) {
+            $status->markAsDownloaded($show);
         }
     }
 

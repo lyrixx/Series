@@ -4,8 +4,8 @@ namespace Series\Show\Mine;
 
 class ShowCollection implements \Iterator
 {
-    private $shows     = array();
-    private $position  = 0;
+    private $shows = array();
+    private $position = 0;
 
     public function __construct(array $shows = array())
     {

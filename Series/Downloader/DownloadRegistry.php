@@ -20,7 +20,7 @@ class DownloadRegistry implements DownloadInterface
     public function download(ShowInterface $show)
     {
         foreach ($this->downloaders as $downloader) {
-            if ($show->getType() == $downloader->getSupportedType()) {
+            if ($downloader->supports($show->getType())) {
                 $downloader->download($show);
 
                 return;
@@ -30,14 +30,9 @@ class DownloadRegistry implements DownloadInterface
         throw new \RunTimeException(sprintf('There is no downloaders for "%s" type', $show->getType()));
     }
 
-    public function getSupportedType()
+    public function supports($type)
     {
         return true;
-    }
-
-    public function addDownloader(DownloadInterface $downloaders)
-    {
-        $this->downloaders[] = $downloaders;
     }
 
     public function getDownloaders()
@@ -45,11 +40,19 @@ class DownloadRegistry implements DownloadInterface
         return $this->downloaders;
     }
 
+    public function addDownloader(DownloadInterface $downloaders)
+    {
+        $this->downloaders[] = $downloaders;
+    }
+
     public function setDownloaders($downloaders)
     {
-        $this->downloaders = $downloaders;
+        $this->downloaders = array();
+
+        foreach ($downloaders as $downloader) {
+            $this->addDownloader($downloader);
+        }
 
         return $this;
     }
-
 }

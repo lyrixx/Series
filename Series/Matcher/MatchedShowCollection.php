@@ -6,7 +6,6 @@ use Series\Show\Mine\ShowInterface as MineShow;
 
 class MatchedShowCollection
 {
-
     private $collection = array();
 
     public function get(MineShow $mineShow)

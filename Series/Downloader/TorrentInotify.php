@@ -23,9 +23,9 @@ class TorrentInotify implements DownloadInterface
         return copy($show->getTorrent(), $this->downloadDir.$show->__toString().'.torrent');
     }
 
-    public function getSupportedType()
+    public function supports($type)
     {
-        return ShowInterface::TYPE_TORRENT;
+        return $type === ShowInterface::TYPE_TORRENT;
     }
 
 }

@@ -10,7 +10,7 @@ class Show implements ShowInterface
 
     public function __construct($title = null, $version = null)
     {
-        $this->title   = $title;
+        $this->title = $title;
         $this->version = $version;
     }
 

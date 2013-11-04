@@ -31,7 +31,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
         $statusFake = $this->getMock('Series\Show\Status\StatusInterface');
         $statusFake
             ->expects($this->exactly(5))
-            ->method('isAlreadyDownloaded')
+            ->method('isDownloaded')
             ->will($this->returnValue(false))
         ;
 
